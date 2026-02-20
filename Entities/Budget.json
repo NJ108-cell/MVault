@@ -1,0 +1,59 @@
+{
+  "name": "Budget",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Budget name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "food",
+        "transportation",
+        "housing",
+        "utilities",
+        "entertainment",
+        "shopping",
+        "healthcare",
+        "education",
+        "travel",
+        "other"
+      ],
+      "description": "Budget category"
+    },
+    "monthly_limit": {
+      "type": "number",
+      "description": "Monthly spending limit for this category"
+    },
+    "current_spent": {
+      "type": "number",
+      "default": 0,
+      "description": "Amount spent this month in this category"
+    },
+    "alert_threshold": {
+      "type": "number",
+      "description": "Percentage at which to send alerts (e.g., 80)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this budget is active"
+    },
+    "period_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of current budget period"
+    },
+    "period_end": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of current budget period"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "monthly_limit"
+  ]
+}

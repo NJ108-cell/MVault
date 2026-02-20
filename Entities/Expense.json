@@ -1,0 +1,64 @@
+{
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "description": "Amount spent"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the expense"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "food",
+        "transportation",
+        "housing",
+        "utilities",
+        "entertainment",
+        "shopping",
+        "healthcare",
+        "education",
+        "travel",
+        "other"
+      ],
+      "description": "Expense category"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of expense"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "credit_card",
+        "debit_card",
+        "bank_transfer",
+        "digital_wallet"
+      ],
+      "description": "How the expense was paid"
+    },
+    "is_recurring": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is a recurring expense"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Custom tags for the expense"
+    }
+  },
+  "required": [
+    "amount",
+    "description",
+    "category",
+    "date"
+  ]
+}
