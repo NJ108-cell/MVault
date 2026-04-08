@@ -1,9 +1,9 @@
-🏦 Smart Expense Manager
+# 🏦 Smart Expense Manager
 Proactive Financial Engineering - AI-Powered Wealth Automation - Future-Proof Solvency
 
 Visualize your wealth trajectory in real-time—built for the next-gen financier.
 
-🏛️ Executive Summary
+# 🏛️ Executive Summary
 Tired of spreadsheets that just record your money mistakes? Smart Expense Manager is your digital CFO: a ruthless guardian of budgets, an AI whisperer for investments, and a vault for unbreakable discipline.
 
 From Chaos to Capital: Auto-enforces budgets, quarantines emergencies, and auto-allocates surplus to stocks/FDs.
@@ -18,17 +18,17 @@ Privacy-First Fortress: Local SQLite encryption—no cloud leaks, ever.
 
 Engineered for BTech hustlers chasing FinTech placements. Deploy in 60s. Scale to millions.
 
-💎 Core Superpowers
+# 💎 Core Superpowers
 Feature	Icon	How It Wins
 Hard-Lock Budgets	🛡️	Ironclad ceilings—overspend? Blocked. Emotional buys? Denied.
 Emergency Vault	🔒	Auto-siphons 20% income to untouchable reserves.
 Anomaly Hunter	🚨	ML detects spikes (e.g., "Dining Out +300%") + instant alerts.
 AI Investment Engine	📈	Risk-adjusted recs: "Dump $1.2k in NIFTY50 (8.2% proj. ROI)."
 Cashflow Oracle	🔮	Predicts 90-day shortfalls using pandas time-series magic.
-🏗️ Battle-Tested Architecture
+# 🏗️ Battle-Tested Architecture
 text
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   User Input    │───▶│   Core Engine    │───▶│  Wealth Advisor  │
+│   User Input    │───▶│   Core Engine    │───▶│  Wealth Advisor│
 │ (CLI/React UI)  │    │ (SQLite + Pandas)│    │ (Risk Algos)    │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
                                  │
@@ -41,18 +41,18 @@ Scalable Stack: Python 3.11 - Pandas - SQLite - (Phase III: Yahoo Finance API vi
 
 Security: AES-256 at rest; input sanitization; zero external deps for core.
 
-🚀 Lightning-Fast Setup
+# 🚀 Lightning-Fast Setup
 bash
-# Fork & clone this beast
+Fork & clone this beast
 git clone https://github.com/yourusername/smart-expense-manager.git
 cd smart-expense-manager
 
-# Virtual env + deps (your favorites: pandas, yfinance, tabulate)
+#Virtual env + deps (your favorites: pandas, yfinance, tabulate)
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
-# Fire it up
+#Fire it up
 python main.py
 Demo Output:
 
