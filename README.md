@@ -28,25 +28,14 @@ Instead of just logging past mistakes, it **orchestrates your future solvency** 
 
 ---
 
-## 💼 What It Does
-
-- Tracks income, expenses, and cashflow with **millisecond-level** ledger writes.
-- Enforces **hard budget ceilings** that cannot be bypassed from the UI.
-- Maintains an **emergency vault** that is logically and programmatically isolated.
-- Detects **spending anomalies** (e.g., Dining +300%) and flags them early.
-- Simulates **90‑day cashflow** to warn you before you go negative.
-- Suggests **AI‑assisted investment allocations** (e.g., NIFTY50 vs FD) based on surplus and risk profile.
-
----
-
 ## 💎 Core Superpowers
 
 | Feature               | Icon | How It Wins                                                                 |
 |-----------------------|------|-----------------------------------------------------------------------------|
 | **Hard-Lock Budgets** | 🛡️   | Ironclad ceilings — overspend attempts are blocked before money leaves.     |
 | **Emergency Vault**   | 🔒   | Auto-siphons a fixed % of income into an untouchable reserve pool.          |
-| **Anomaly Hunter**    | 🚨   | ML flags unusual spikes (e.g., “Dining Out +300%”) with real-time alerts.   |
-| **AI Investment Engine** | 📈 | Generates risk‑adjusted allocation suggestions (e.g., NIFTY50, FDs).        |
+| **Anomaly Hunter**    | 🚨   | Flags unusual spikes (e.g., “Dining Out +300%”) with real-time alerts.      |
+| **AI Investment Engine** | 📈 | Generates risk‑aligned allocation ideas (e.g., NIFTY50 vs FD).              |
 | **Cashflow Oracle**   | 🔮   | Predicts 30–90 day liquidity shortfalls using pandas time‑series models.    |
 
 ---
@@ -65,7 +54,7 @@ Instead of just logging past mistakes, it **orchestrates your future solvency** 
 | **Storage**    | SQLite (encrypted), local persistence |
 | **Analytics**  | Time-series analysis, anomaly rules   |
 | **Interface**  | CLI (current), React UI (planned)     |
-| **Integrations** | yfinance / Alpha Vantage (roadmap)  |
+| **Integrations (Roadmap)** | yfinance / Alpha Vantage  |
 | **Security**   | AES‑256 encryption at rest            |
 
 ---
@@ -74,21 +63,21 @@ Instead of just logging past mistakes, it **orchestrates your future solvency** 
 
 ```mermaid
 flowchart LR
-    U[User<br/>CLI / React UI] -->|Commands, Transactions| C[Core Engine<br/>Python + Pandas]
+    U[User<br/>CLI / React UI] -->|Commands & Transactions| C[Core Engine<br/>Python + Pandas]
 
     C --> L[Ledger Manager<br/>Income / Expense / Categories]
     C --> B[Budget Sentry<br/>Hard-Lock Rules]
     C --> E[Emergency Vault<br/>Reserve Logic]
     C --> A[Anomaly Detector<br/>Spikes & Patterns]
-    C --> W[Wealth Advisor<br/>AI Allocation Engine]
+    C --> W[Wealth Advisor<br/>Allocation Engine]
 
     L <--> D[(Data Fortress<br/>Encrypted SQLite)]
     B <--> D
     E <--> D
     A <--> D
 
-    W --> R[Recommendations<br/>(Stocks / FDs / Cash)]
-    A --> N[Notifications<br/>Alerts & Warnings]
+    W --> R[Recommendations]
+    A --> N[Alerts & Warnings]
 ```
 
 ---
@@ -119,8 +108,10 @@ cd smart-expense-manager
 
 ```bash
 python -m venv venv
+
 # macOS / Linux
 source venv/bin/activate
+
 # Windows
 venv\Scripts\activate
 ```
@@ -131,12 +122,12 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Typical dependencies include:
+Common dependencies:
 
-- `pandas`
-- `tabulate`
-- `yfinance` or `alpha_vantage` (for later phases)
-- `cryptography` / `pyAesCrypt` (for encryption)
+- pandas  
+- tabulate  
+- yfinance / alpha_vantage (for market data phases)  
+- cryptography / pyAesCrypt (encryption)
 
 ### 4️⃣ Run the engine
 
@@ -172,19 +163,19 @@ python main.py
 | `budget_sentry.py`  | Hard caps, alerts, and lock enforcement             |
 | `vault.py`          | Emergency fund logic and isolation                  |
 | `anomaly.py`        | Spike detection and behavioral alerts               |
-| `advisor.py`        | Asset allocation, basic risk scoring                |
-| `storage.py`        | SQLite schema, encryption handling                  |
+| `advisor.py`        | Asset allocation and basic risk profiling           |
+| `storage.py`        | SQLite schema and encryption handling               |
 | `cli.py`            | Command-line interface and workflows                |
 
 ---
 
 ## 🗺️ Roadmap
 
-- ✅ **Phase I**: Transaction ledger + auto‑categorization (basic NLP rules).
-- ✅ **Phase II**: Hard‑lock budgets + anomaly detection.
-- 🔄 **Phase III**: Live market integration (Yahoo Finance / Alpha Vantage via `yfinance`).
-- 🚀 **Phase IV**: React dashboard + predictive ML (cashflow forecasting ~95% accuracy).
-- 🌟 **Phase V**: Wearable alerts + gesture‑based confirmations (IoT / wearable tie‑in).
+- ✅ **Phase I**: Transaction ledger + auto‑categorization (basic NLP rules).  
+- ✅ **Phase II**: Hard‑lock budgets + anomaly detection.  
+- 🔄 **Phase III**: Live market integration (Yahoo Finance / Alpha Vantage).  
+- 🚀 **Phase IV**: React dashboard + predictive ML (cashflow forecasting ~95% accuracy).  
+- 🌟 **Phase V**: Wearable alerts + gesture‑based confirmations (IoT / wearable tie‑in).  
 
 ---
 
@@ -200,14 +191,14 @@ python main.py
    ```bash
    pytest
    ```
-5. **Open a Pull Request** with a concise description
+5. **Open a Pull Request** with a concise description  
 
-Ideas to contribute:
+Good contribution ideas:
 
-- New anomaly detection strategies
-- Advanced risk models (volatility, drawdown)
-- Better CLI UX or React dashboard
-- Country-specific tax/FD rules
+- New anomaly detection strategies  
+- Better risk models (volatility, drawdown, VaR)  
+- Enhanced CLI UX or React dashboard screens  
+- Localization or region-specific rules  
 
 ---
 
